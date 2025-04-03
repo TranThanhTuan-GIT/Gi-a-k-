@@ -1,19 +1,19 @@
-def fibonacci(n):
-    if n < 0:
-        return "Giá trị n không hợp lệ. Vui lòng nhập n >= 0."
-    
-    fib = [0] * (n + 1)
-    
-    if n >= 1:
-        fib[1] = 1
-    
-    
-    for i in range(2, n + 1):
-        fib[i] = fib[i - 1] + fib[i - 2]
-        
-    return fib[n]
+def fibonacci_ct(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
 
+    gt2, gt1 = 0, 1
+    for _ in range(2, n + 1):
+        ht = gt1 + gt2
+        gt2, gt1 = gt1, ht
 
-n = int(input("Nhập vào số n để tính số Fibonacci thứ n: "))
-result = fibonacci(n)
-print(f"Số Fibonacci thứ {n} là: {result}")
+    return gt1
+
+n = int(input("Nhập số n: "))
+print(f"Số Fibonacci thứ {n} là: {fibonacci_ct(n)}")
+
+#Chỉ lưu hai số gần nhất trong dãy.
+#Giảm bộ nhớ từ O(n) xuống O(1)
+
