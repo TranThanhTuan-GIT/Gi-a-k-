@@ -16,4 +16,5 @@ print(f"Số Fibonacci thứ {n} là: {fibonacci_ct(n)}")
 
 #Chỉ lưu hai số gần nhất trong dãy.
 #Giảm bộ nhớ từ O(n) xuống O(1)
+#+1 tối ưu
 
